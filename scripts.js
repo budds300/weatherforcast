@@ -1,4 +1,7 @@
 
+window.addEventListener('load',()=>{
+    document.querySelector('#preloader').classList.add('preload-finish')
+})
 let weather ={
     apiKey:"43241b5edddc430b9cc72005220205",
     fetchWeather: function (city){
@@ -34,20 +37,20 @@ let weather ={
             
             const heres = document.querySelector(`#here${index}`).innerHTML=`
             
-            <div class='card mt-5'>
+            <div class='card3' data-aos="fade-up" data-aos-offset="300" data-aos-anchor-placement="top-bottom">
             <div class='card-body'>
-                    <div class='time1 mt-1'>${dayOfWeek(day,m,y)} ${day}/${m}/${y}</div>
-                    <h1 class='degree1 ms-'>${d.day.maxtemp_c} °C</h1>
-                        <div class='d-flex'>
-                            <img class='icon1 ' src='https:${d.day.condition.icon}' alt=' width='100'/>
+                    <div class='time1 '>${dayOfWeek(day,m,y)} ${day}/${m}/${y}</div>
+                    <h1 class='degree1 '>${d.day.maxtemp_c} °C</h1>
+                        <div class='d-flex1'>
+                            <img class='icon1 ' src='https:${d.day.condition.icon}' alt='width="70px"/>
                             <h6 class='description1 ps-1 mt-3'>${d.day.condition.text}</h6>
                         </div>
                 </div>
-                <h6 class='humidity1  ps-2'>humidity: ${d.day.avghumidity}:</h6>
+                <h6 class='humidity1  ps-2'>humidity: ${d.day.avghumidity}</h6>
                 <h6 class='windspeed1  ps-2'>windspeed: ${d.day.maxwind_kph}</h6>
                 <h6 class='windspeed1  ps-2'>Sunrise: ${sunrise}</h6>
                 <h6 class='windspeed1  ps-2'>Sunset: ${sunset}</h6>
-                <h6 class='country1  ps-2'>country: ${country}</h6>  
+                <h6 class='country1  ps-2'>Country: ${country}</h6>  
             </div>
             </div>`
                 
@@ -56,9 +59,18 @@ let weather ={
        
         //   return forecastarr
     }
-   // Call listener function at run time
-    //   x.addListener(myFunction)
-    document.body.style.backgroundImage="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://source.unsplash.com/1920x1080/?"+name+"')"
+    function myFunction(x) {
+        if (x.matches) { // If media query matches
+          document.body.style.height="700vh"
+        } else {
+         document.body.style.height="200vh"
+        }
+      }
+      
+      const x = window.matchMedia("(max-width: 375px)")
+      myFunction(x)
+      
+    document.body.style.backgroundImage="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://source.unsplash.com/1920x1080/?"+name+text+"')"
     
     document.querySelector(".city").innerText= "Weather in "+ name;
     mapdatafunct(forecastarr);

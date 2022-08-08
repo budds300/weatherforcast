@@ -1,4 +1,6 @@
-
+window.addEventListener('load',()=>{
+    document.querySelector('#preloader').classList.add('preload-finish')
+})
 let weather ={
     apiKey:"43241b5edddc430b9cc72005220205",
     fetchWeather: function (city){
@@ -29,18 +31,18 @@ let weather ={
                 const time =h.time.substr(11)
                 const heres = document.querySelector(`#here${i}`).innerHTML=`
                 
-                <div class='card mt-5'>
-                <div class='card-body'>
+                <div class='card3 mt-5' data-aos="fade-up" data-aos-offset="300" data-aos-anchor-placement="center-bottom">
+                <div class='card-body1'>
                         <div class='time1 mt-1'>${time}</div>
                         <h1 class='degree1 ms-'>${h.temp_c} °C</h1>
-                            <div class='d-flex'>
-                                <img class='icon1 ' src='https:${h.condition.icon}' alt=' width='100'/>
+                            <div class="d-flex1">
+                                <img class='icon1 ' src='https:${h.condition.icon}' alt=' width="70px"/>
                                 <h6 class='description1 ps-1 mt-3'>${h.condition.text}</h6>
                             </div>
-                    </div>
-                    <h6 class='humidity1  ps-2'>humidity: ${h.humidity}:</h6>
-                    <h6 class='windspeed1  ps-2'>windspeed: ${h.wind_kph}</h6>
-                    <h6 class='country1  ps-2'>country: ${country}</h6>  
+                            <h6 class="humidity1">Humidity: ${h.humidity}</h6>
+                            <h6 class="windspeed1">Windspeed: ${h.wind_kph}</h6>
+                    <h6 class="country1"> ${country}</h6>  
+                </div>
                 </div>
                 </div>`
                 return(console.log(time),heres)
@@ -51,17 +53,17 @@ let weather ={
     }
     function myFunction(x) {
         if (x.matches) { // If media query matches
-          document.body.style.height="155vh"
+          document.body.style.height="700vh"
         } else {
-         document.body.style.height="700vh"
+         document.body.style.height="200vh"
         }
       }
       
       const x = window.matchMedia("(max-width: 375px)")
       myFunction(x) // Call listener function at run time
     //   x.addListener(myFunction)
-    document.body.style.backgroundImage="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://source.unsplash.com/1920x1080/?"+name+"')"
-    document.body.style.height="500vh"
+    document.body.style.backgroundImage="linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),url('https://source.unsplash.com/1920x1080/?"+name+text+"')"
+      
     mapdatafunct(forecastarr);
     document.querySelector(".city").innerText= "Weather in "+ name;
     document.querySelector(".icon").src="http:"+icon;
@@ -69,7 +71,7 @@ let weather ={
     document.querySelector(".windspeed").innerText="Wind Speed: "+wind_mph+ "km/h";
     document.querySelector(".degrees").innerText=temp_c + "°C";
     document.querySelector(".time").innerText= `Date: ${dayOfWeek(d,m,y)} ${d}/${m}/${y} Time: ${time}`;
-    document.querySelector(".country").innerText="Country: "+country;
+    document.querySelector(".country").innerText=country;
     document.querySelector(".card-body").classList.remove("loading");
         
     }

@@ -4,85 +4,68 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Font Awesome -->
-<link
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-rel="stylesheet"
-/>
+
 <!-- Google Fonts -->
-<link
-href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-rel="stylesheet"
-/>
-<!-- MDB -->
-<link
-href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.css"
-rel="stylesheet"
-/>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    
     <link rel="stylesheet" href="styles.css">
     <title>Weather app</title>
 </head>
 <body>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <!-- Container wrapper -->
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html">Weather App</a>
-          <!-- Toggle button -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-mdb-toggle="collapse"
-            data-mdb-target="#navbarRightAlignExample"
-            aria-controls="navbarRightAlignExample"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <i class="fas fa-bars"></i>
-          </button>
+  <div id="preloader">
+    <div id="loader"></div>
+  </div>
+  <nav class="container">
+    <input id="nav-toggle" type="checkbox" />
+    <a href="index.html"> 
+      <div class="logo">Weather<strong>App</strong></div>
+    </a>
+    <ul class="links">
+      <li class="list">
+        <a href="">Home</a>
+        <div class="#container"></div>
+      </li>
+      <li class="list">
+        <a href="hourly.html">Hourly</a>
+        <div class="home_underline"></div>
+      </li>
+      <li class="list">
+        <a href="daily.html">Daily</a>
+        <div class="home_underline"></div>
+      </li>
+     
+    </ul>
+    <label for="nav-toggle" class="icon-burger">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </label>
+  </nav>
       
-          <!-- Collapsible wrapper -->
-          <div class="collapse navbar-collapse" id="navbarRightAlignExample">
-            <!-- Left links -->
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="hourly.html">Hourly</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="daily.html">Daily</a>
-              </li>
-            </ul>
-              </div>
-            
-           
-          <!-- Collapsible wrapper -->
-        </div>
-        <!-- Container wrapper -->
-      </nav>
-      
-<div class="container">
-    <h1 class="text-center pt-5 text-white">Welcome to  Weather forcast app.</h1>
+<div class="container" id="container">
+    <h1 class="text-center pt-5 text-white" data-aos="fade-up" data-aos-offset="500">Welcome to  Weather forcast app.</h1>
     <div class="row">
         <div class="col-md-3"></div>
         <div class="col-md-6">
-            <div class="card card1 mt-5 border-round">
+            <div class="card card1 mt-5 border-round" data-aos="fade-up" data-aos-offset="300" data-aos-anchor-placement="top-bottom">
                 <div class="card-header border-bottom border-white">
                     <div class="row">
                         <div class="col-md-2"></div>
                         <div class="col-md-8">
                             <div class="input-group rounded-pill pt-3 ">
-                              <form action="" method="post">
-
-                              </form>
-                                <input type="search" class="form-control rounded-pill text-white  bar border-light search" placeholder="Search" required aria-label="Search" aria-describedby="search-addon" id="search" />
-                                <button class="input-group-text border-0  ms-1 rounded-pill " id="search-addon">
-                                  <i class=" text-white fas fa-search"></i>
+                              
+                                <input type="search" class="form-control rounded-pill text-white bar border-light search" placeholder="Search" required aria-label="Search" aria-describedby="search-addon" id="search" />
+                                <button class="input-group-text border-0  ms-1 rounded-pill bg-dark" id="search-addon">
+                                  <i class="fa fa-search"></i>
                                 </button>
-                                <hr>
                               </div>
+                              <hr>
                         </div>
                         <div class="col-md-2"></div>
                     </div>
@@ -90,16 +73,15 @@ rel="stylesheet"
                 
                 <div class="card-body loading">
                     <h2> <strong class="city">Weather in Nairobi</strong> </h2>
-                    
-                    <h4 class="degrees ms-1">51°C</h4>
                     <div class="d-inline-flex">
-                        <img class="icon" src="" alt="" width="50px">
-                        <h6 class="description ps-1 mt-3">cloudy</h6>
+                      <h4 class="degrees ms-1">51°C</h4>
+                        <img class="icon" src="" alt="" width="70px">
+                        <h5 class="description ps-1 mt-3">cloudy</h5>
                     </div>
-                    <h6 class="humidity ms-1">humidity:</h6>
-                    <h6 class="windspeed   ms-1">windspeed::</h6>
-                    <h6 class="time ms-1"></h6>
-                    <h6 class="country ms-1"></h6>
+                    <h5 class="humidity ms-1">humidity:</h5>
+                    <h5 class="windspeed   ms-1">windspeed::</h5>
+                    <h5 class="time ms-1"></h5>
+                    <h5 class="country ms-1"></h5>
 
                 </div>
             </div>
@@ -108,10 +90,12 @@ rel="stylesheet"
     </div>
 </div>
   
-    <!-- MDB -->
-<script
-type="text/javascript"src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/4.0.0/mdb.min.js"  ></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+  
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init();
+</script>
     <script src="script.js" defer></script>
 </body>
 </html>
