@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['login_user2'])){
+  header("location: customerlogin.php"); 
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,23 +29,30 @@
   </div>
   <nav class="container">
     <input id="nav-toggle" type="checkbox" />
-    <a href="index.html"> 
+    <a href="index.php"> 
       <div class="logo">Weather<strong>App</strong></div>
     </a>
     <ul class="links">
+      <li class="list">
+        <a href=""> Hello <?php echo $_SESSION['login_user2'] ?></a>
+        <div class="#container"></div>
+      </li>
       <li class="list">
         <a href="">Home</a>
         <div class="#container"></div>
       </li>
       <li class="list">
-        <a href="hourly.html">Hourly</a>
+        <a href="hourly.php">Hourly</a>
         <div class="home_underline"></div>
       </li>
       <li class="list">
-        <a href="daily.html">Daily</a>
+        <a href="daily.php">Daily</a>
         <div class="home_underline"></div>
       </li>
-     
+      <li class="list">
+        <a href="logout_user.php">Log out</a>
+        <div class="home_underline"></div>
+      </li>
     </ul>
     <label for="nav-toggle" class="icon-burger">
       <div class="line"></div>

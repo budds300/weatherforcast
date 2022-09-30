@@ -1,3 +1,9 @@
+<?php
+session_start();
+if(!isset($_SESSION['login_user2'])){
+  header("location: customerlogin.php"); 
+  }
+  ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -28,20 +34,28 @@ rel="stylesheet"
   </div>
   <nav class="container">
     <input id="nav-toggle" type="checkbox" />
-    <a href="index.html"> 
+    <a href="index.php"> 
       <div class="logo">Weather<strong>App</strong></div>
     </a>
     <ul class="links">
+    <li class="list">
+        <a href=""  > Hello <?php echo $_SESSION['login_user2'] ?></a>
+        <div class="#container"></div>
+      </li>
       <li class="list">
-        <a href="index.html">Home</a>
+        <a href="index.php"  style="padding: 0 15px 0 0;">Home</a>
         <div class=""></div>
       </li>
       <li class="list">
-        <a href="#container">Hourly</a>
+        <a href="#container" style="padding: 0 15px 0 0;">Hourly</a>
         <div class="home_underline"></div>
       </li>
       <li class="list">
-        <a href="daily.html">Daily</a>
+        <a href="daily.php" style="padding: 0 15px 0 0;">Daily</a>
+        <div class="home_underline"></div>
+      </li>
+      <li class="list">
+        <a href="logout_user.php" style="padding: 0 15px 0 0;">Logout</a>
         <div class="home_underline"></div>
       </li>
       <div class="d-flex input-group w-auto">
@@ -57,6 +71,7 @@ rel="stylesheet"
           <i class="fas fa-search text-white"></i>
         </button>
       </div>
+    
     </ul>
     <label for="nav-toggle" class="icon-burger">
       <div class="line"></div>

@@ -1,0 +1,142 @@
+.logo{
+    width: 10%;
+    float: left;
+}
+.menu{
+    line-height: 60px;
+}
+.menu ul{
+    list-style-type: none;
+}
+
+.menu ul li{
+    display: inline;
+    padding: 1%;
+    font-weight: bold;
+}
+section.navbar {
+    background-color: black;
+    color: white;
+    margin: -16px -10px 0 -10px;
+}
+section a{
+    color: #ffffff;
+    text-decoration: none;
+}
+a:hover{
+    color: #d0d0d0;
+}
+body{
+    overflow-x: hidden;
+}
+.text-right{
+    text-align: right;
+}
+.text-center{
+    text-align: center;
+}
+.text-left{
+    text-align: left;
+}
+.alert-success{
+background-color: rgb(160, 214, 160);
+color: rgb(25, 89, 25);
+border-radius: 2px solid rgb(102, 181, 102);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+padding: 10px;
+text-align: center;
+}
+.alert-danger{
+background-color: rgb(215, 160, 160);
+color: rgb(126, 39, 39);
+border-radius: 2px solid rgb(165, 64, 64);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+padding: 10px;
+text-align: center;
+}
+table {
+    margin-top: 50px;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+
+
+.yellow{
+    width: 50%;
+    margin: auto;
+}
+.col-md-7{
+    margin: auto;
+    width: 70%;
+}
+@media only screen and (min-width:1000px){
+    form{
+        padding:0 0 0 30vh ;
+    }
+    
+}
+@media only screen and (max-width:700px){
+    form{
+    padding:0 0 0 5vh ;
+    }
+    
+}
+.btn{
+    padding: 1%;
+    border: none;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+.btn-primary{
+    padding: 15px;
+    background-color: #ff6b81;
+    color: white;
+    cursor: pointer;
+}
+.btn-primary:hover{
+    color: white;
+    background-color: #ff4757;
+}
+.btn-secondary{
+    padding: 15px;
+    background-color: #8c8889;
+    color: white;
+    cursor: pointer;
+}
+.btn-secondary:hover{
+    color: white;
+    background-color: #726a6b;
+}
+.btn-info{
+    padding: 15px;
+    padding: 15px;
+    background-color: #39c8e8;
+    color: white;
+    cursor: pointer;
+}
+.space{
+    padding: 25px;
+}
+.btn-info:hover{
+    color: white;
+    background-color: #53eaf4;
+}
+.btn-danger{
+    padding: 15px;
+    background-color: #e84839;
+    color: white;
+    cursor: pointer;
+}
+.btn-danger:hover{
+    color: white;
+    background-color: #f54d4d;
+}
+    
